@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import DivOne from './components/DivOne'
 import './App.css';
 
 function App(props) {
@@ -7,21 +8,11 @@ function App(props) {
     caps: false,
   }
 
-  const [state, setState] = useState(tardis)
 
-  const updateCapitalization = () => {
-    console.log('click')
-    const newState = {
-      name: state.caps ? state.name.toLowerCase() : state.name.toUpperCase(),
-      caps: state.caps ? false : true,
-    }
-
-    setState(newState)
-  }
 
   return (
     <div className="App">
-      <h3 onClick={updateCapitalization}>{state.name}</h3>
+      <DivOne tardis={tardis}/>
     </div>
   );
 }
